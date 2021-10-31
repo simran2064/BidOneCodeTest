@@ -7,8 +7,8 @@
 <h4>Enter Infomation</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form id="dataForm" asp-action="Index" >
+    <div id="data" class="col-md-4">
+        <form id="dataForm" asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
@@ -21,16 +21,10 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <button id="btn" onclick="ClearFields();">Submit</button>
+                <button id="btn">Submit</button>
             </div>
             @ViewBag.message
         </form>
     </div>
 </div>
 
-<script>
-    function ClearFields() {
-        document.getElementById("firstName").value = "";
-        document.getElementById("lastName").value = "";
-    }
-</script>

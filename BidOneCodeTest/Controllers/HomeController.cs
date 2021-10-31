@@ -29,7 +29,8 @@ namespace BidOneCodeTest.Controllers
             _cc.Add(td);
             _cc.SaveChanges();
             ViewBag.message = "This user " + td.FirstName + " " + td.LastName + " was saved successfully";
-            return View();
+            return Json(new { td });
+            //return View();
         }
 
     }
