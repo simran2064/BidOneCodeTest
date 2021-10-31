@@ -1,0 +1,36 @@
+﻿@model BidOneCodeTest.Models.TestData
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h4>Enter Infomation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="dataForm" asp-action="Index" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input id="firstName" asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input id="lastName" asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button id="btn" onclick="ClearFields();">Submit</button>
+            </div>
+            @ViewBag.message
+        </form>
+    </div>
+</div>
+
+<script>
+    function ClearFields() {
+        document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
+    }
+</script>
